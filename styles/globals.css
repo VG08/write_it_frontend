@@ -15,12 +15,25 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.outer{
+  height:90%;
+}
+.inner{
+  margin-left:auto;margin-right:auto;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar-active .hamburger div:first-child {
+  @apply rotate-45 translate-y-1.5;
   }
-  body {
-    color: white;
-    background: black;
+  .navbar-active .hamburger div:last-child {
+  @apply -rotate-45 -translate-y-1;
+  }
+  .navbar-active div:first-child div:first-child div:last-child{
+      @apply block lg:flex
   }
 }
