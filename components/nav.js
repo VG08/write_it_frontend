@@ -16,12 +16,11 @@ export function Navbar() {
     }
   }, []);
   function logout() {
-    if(window.confirm("Are you sure you want to logout?")){
+    if (window.confirm("Are you sure you want to logout?")) {
       localStorage.removeItem("access_token");
       setIsLoggedIn("");
       window.location.href = "/login";
     }
-
   }
 
   return (
@@ -47,7 +46,9 @@ export function Navbar() {
                   <div className="h-4 w-4 rounded-full bg-gray-900"></div>
                   <div className="h-6 w-2 bg-sky-500"></div>
                 </div>
-                <span className="text-base font-bold text-gray-400">SASS</span>
+                <span className="text-base font-bold text-gray-400">
+                  WriteIT
+                </span>
               </a>
               <label
                 htmlFor="hbr"
@@ -115,15 +116,24 @@ export function Navbar() {
                 </div>
               ) : (
                 <div>
-                    <button
-                      onClick={logout}
-                      type="button"
-                      className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max"
-                    >
-                      <span className="block text-sky-900 font-semibold lg:text-sm">
-                        {isLoggedIn}
-                      </span>
-                    </button>
+                  <button
+                    onClick={() => (window.location.href = "/profile/me")}
+                    type="button"
+                    className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max"
+                  >
+                    <span className="block text-sky-900 font-semibold lg:text-sm">
+                      {isLoggedIn}
+                    </span>
+                  </button>
+                  <button
+                    onClick={logout}
+                    type="button"
+                    className="w-full py-2.5 pl-6 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max"
+                  >
+                    <span className="block text-sky-900 font-semibold lg:text-sm">
+                      Logout
+                    </span>
+                  </button>
                 </div>
               )}
             </div>

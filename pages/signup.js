@@ -16,7 +16,7 @@ export default function Signup() {
       if (res.ok) {
         window.location.href = "/login";
       } else {
-        toast("Email already exists!", { type: "error" });
+        toast("Username already exists!", { type: "error" });
       }
     });
   };
@@ -34,7 +34,7 @@ export default function Signup() {
                 </h2>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-gray-700">
-                      Email
+                      Username
                     </label>
                     <input
                       type="email"

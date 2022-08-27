@@ -38,7 +38,7 @@ export default function Login() {
                 >
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-gray-700">
-                      Email
+                      Username
                     </label>
                     <input
                       type="text"
