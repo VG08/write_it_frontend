@@ -9,7 +9,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://127.0.0.1:8000/:path*' // Proxy to Backend
+        destination: 'https://writeitvg.heroku.app/:path*' // Proxy to Backend
       }
     ]
   }
